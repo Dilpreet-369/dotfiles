@@ -1,0 +1,35 @@
+* {
+    /* Formal KDE Font */
+    font-family: "Noto Sans", "Font Awesome 6 Free", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: #232629; /* KDE Breeze Dark */
+    border: 1px solid #3daee9; /* Formal Blue Border */
+    border-radius: 0px;
+    color: #ffffff; /* Clean White Text */
+    margin: 5px 10px;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    color: #3daee9;
+    border-bottom: 2px solid #3daee9;
+}
+
+/* Formal spacing and distinct white text for all modules */
+#clock, #battery, #pulseaudio, #tray {
+    padding: 0 12px;
+    color: #ffffff;
+}
+
+/* Optional: Slight color accents for icons only to keep it formal */
+#battery.charging { color: #27ae60; }
+#battery.warning { color: #fdbc4b; }
+#battery.critical { color: #e74c3c; }
