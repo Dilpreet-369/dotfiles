@@ -1,30 +1,37 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
-    "spacing": 4,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
+    "height": 28,
+    "spacing": 12,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
-        "pulseaudio",
-        "battery",
-        "clock",
-        "tray" // This is where nm-applet will appear
+        "cpu",
+        "memory",
+        "battery"
     ],
 
     "hyprland/workspaces": {
-        "format": "{name}",
+        "format": "{id}",
         "on-click": "activate"
     },
 
-    "tray": {
-        "icon-size": 18,
-        "spacing": 10
+    "clock": {
+        "format": "{:%H:%M - %a, %b %d}",
+        "tooltip-format": "{:%Y-%m-%d}"
     },
 
-    "clock": {
-        "format": "{:%I:%M %p}", // Formal 12h format
-        "tooltip-format": "{:%A, %d %B %Y}"
+    "cpu": {
+        "format": "CPU {usage}%"
+    },
+
+    "memory": {
+        "format": "RAM {percentage}%"
     },
 
     "battery": {
@@ -32,17 +39,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-icons": ["", "", "", "", ""]
-    },
-
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", ""]
-        }
+        "format": "BAT {capacity}%",
+        "format-charging": "CHR {capacity}%",
+        "format-plugged": "PLG {capacity}%",
+        "format-alt": "TIME {time}"
     }
 }
