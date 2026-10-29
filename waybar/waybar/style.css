@@ -1,35 +1,60 @@
 * {
-    /* Formal KDE Font */
-    font-family: "Noto Sans", "Font Awesome 6 Free", sans-serif;
-    font-size: 14px;
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace, sans-serif;
+    font-size: 13px;
     font-weight: bold;
+    min-height: 0;
 }
 
 window#waybar {
-    background-color: #232629; /* KDE Breeze Dark */
-    border: 1px solid #3daee9; /* Formal Blue Border */
-    border-radius: 0px;
-    color: #ffffff; /* Clean White Text */
-    margin: 5px 10px;
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 1px solid #333333;
 }
 
+/* Left Workspaces */
 #workspaces button {
+    padding: 0 8px;
+    background-color: transparent;
+    color: #888888;
+}
+
+#workspaces button.active {
+    color: #ffffff;
+    background-color: #222222;
+}
+
+#workspaces button.urgent {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+#workspaces button:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Center Clock */
+#clock {
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+/* Right Modules */
+#cpu,
+#memory,
+#battery {
     padding: 0 8px;
     color: #ffffff;
 }
 
-#workspaces button.active {
-    color: #3daee9;
-    border-bottom: 2px solid #3daee9;
-}
-
-/* Formal spacing and distinct white text for all modules */
-#clock, #battery, #pulseaudio, #tray {
-    padding: 0 12px;
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
 }
 
-/* Optional: Slight color accents for icons only to keep it formal */
-#battery.charging { color: #27ae60; }
-#battery.warning { color: #fdbc4b; }
-#battery.critical { color: #e74c3c; }
+#battery.critical:not(.charging) {
+    background-color: #ffffff;
+    color: #000000;
+}
